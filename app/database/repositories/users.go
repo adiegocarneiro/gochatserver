@@ -3,7 +3,7 @@ package repositories
 import (
 	"gochatserver/app/database/entities"
 
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
 
