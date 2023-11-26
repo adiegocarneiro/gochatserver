@@ -30,4 +30,6 @@ func ExecuteMigrations(db *gorm.DB) {
 	// add entities to migrate
 	log.Println("Executando migrations!")
 	db.AutoMigrate(entities.User{})
+	db.AutoMigrate(entities.ChatMessage{})
+	db.AutoMigrate(entities.Room{})
 }

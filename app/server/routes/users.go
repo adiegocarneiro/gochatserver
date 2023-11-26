@@ -4,7 +4,7 @@ import (
 	"gochatserver/app/database/repositories"
 	"gochatserver/app/server/handlers"
 
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
 
