@@ -1,14 +1,24 @@
 package repositories
 
 import (
+	"gochatserver/app/config"
 	"gochatserver/app/database/entities"
 
 	"github.com/gofiber/fiber/v2"
-	"gorm.io/gorm"
 )
 
-type Repository struct {
-	DB *gorm.DB
+func (repo Repository) CreateUser(ctx *fiber.Ctx, userData *entities.User) config.Response {
+	if results := repo.DB.Create(&userData); results.Error != nil {
+		return config.Response{
+			Success: false,
+			Message: "Erro ao cadastrar usuário",
+		}
+	}
+	return config.Response{
+		Success: true,
+		Message: "Usuário cadastrado com sucesso!",
+		Object:  userData,
+	}
 }
 
 func (repo Repository) GetAllUsers(ctx *fiber.Ctx) *[]entities.User {

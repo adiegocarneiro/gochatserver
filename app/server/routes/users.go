@@ -15,6 +15,6 @@ func userRouter(db *gorm.DB, app *fiber.App) *fiber.App {
 
 	app.Get("users/", handlers.GetAllUsersHandler(repo))
 	app.Get("users/:id", handlers.GetUserHandler(repo))
-
+	app.Post("users/", handlers.CreateUserHandler(repo))
 	return app
 }

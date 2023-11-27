@@ -6,6 +6,17 @@ import (
 	"github.com/joho/godotenv"
 )
 
+type Response struct {
+	Success bool        `json:"success"`
+	Message string      `json:"message"`
+	Object  interface{} `json:"object,omitempty"`
+}
+
+type IngressRequest struct {
+	UserId string `json:"id_usuario"`
+	RoomId string `json:"id_sala"`
+}
+
 type Config struct {
 	DB_PORT string
 	DB_NAME string

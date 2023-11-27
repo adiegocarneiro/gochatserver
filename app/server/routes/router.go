@@ -7,6 +7,7 @@ import (
 
 func SetupRoutes(db *gorm.DB, app *fiber.App) *fiber.App {
 	userRouter(db, app)
-	wsRouter(app)
+	roomRouter(db, app)
+	wsRouter(db, app)
 	return app
 }
