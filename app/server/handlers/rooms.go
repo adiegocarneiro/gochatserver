@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"gochatserver/app/config"
 	"gochatserver/app/database/entities"
 	"gochatserver/app/database/repositories"
@@ -57,6 +58,7 @@ func IngressChatRoom(repo *repositories.Repository) fiber.Handler {
 		ingressRequest := config.IngressRequest{}
 
 		if err := c.BodyParser(&ingressRequest); err != nil {
+			fmt.Println(err.Error())
 			response := config.Response{}
 			response.Success = false
 			response.Message = "Parâmetros incorretos!"

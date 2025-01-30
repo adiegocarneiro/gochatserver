@@ -13,8 +13,8 @@ type Response struct {
 }
 
 type IngressRequest struct {
-	UserId string `json:"id_usuario"`
-	RoomId string `json:"id_sala"`
+	UserId int `json:"id_usuario"`
+	RoomId int `json:"id_sala"`
 }
 
 type Config struct {
